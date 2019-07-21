@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="checkli">
         <input id="todoItem" type="checkbox" v-on:change="finish"/>
         <span  :class="checkedStatus">{{content.message}} </span>
     </div>
@@ -34,6 +34,9 @@
     .checkedText{
         text-decoration:line-through;
         color:gainsboro;
+    }
+    #checkli{
+        float: left;
     }
 
 </style>
