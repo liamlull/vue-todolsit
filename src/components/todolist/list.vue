@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input/><button v-on:click="addNewItem()">Add</button>
+        <input v-model="addMsg"/><button v-on:click="addNewItem()">Add</button>
         <ol>
            <li v-for="item in items">
                <listItem :content="item.message"></listItem>
@@ -16,6 +16,7 @@
         components: { listItem},
         data(){
             return {
+                addMsg:"",
                 items:[
                     {message:'123456'},
                     {message:'ffffff'}
@@ -23,8 +24,8 @@
             }
         },
         methods:{
-            addNewItem:{
-
+            addNewItem(){
+                this.items.push({message:this.addMsg})
             }
         }
     }
