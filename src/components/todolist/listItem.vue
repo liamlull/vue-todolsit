@@ -1,7 +1,7 @@
 <template>
     <div>
-        <input type="checkbox"/>
-        <span>{{content}} </span>
+        <input id="todoItem" type="checkbox" v-on:change="finish"/>
+        <span  :class="checkedStatus">{{content}} </span>
     </div>
 </template>
 
@@ -10,10 +10,28 @@
         name: "listItem",
         props:[
             "content"
-        ]
+        ],
+        data(){
+          return{
+              checkedStatus:""
+          }
+        },
+        methods:{
+            finish(){
+                if(this.checkedStatus == "checkedText"){
+                    this.checkedStatus =""
+                }else {
+                    this.checkedStatus = "checkedText"
+                }
+            }
+        }
     }
 </script>
 
 <style scoped>
+    .checkedText{
+        text-decoration:line-through;
+        color:gainsboro;
+    }
 
 </style>
