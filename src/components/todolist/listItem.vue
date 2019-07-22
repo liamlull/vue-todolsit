@@ -1,7 +1,7 @@
-<template>
+<template xmlns:v-bing="http://www.w3.org/1999/xhtml">
     <div id="checkli">
-        <input id="todoItem" type="checkbox" v-on:change="finish"/>
-        <span  :class="checkedStatus">{{content.message}} </span>
+        <input id="todoItem" type="checkbox" v-model="content.status"/>
+        <span v-bind:class="{checkedText:content.status}">{{content.message}} </span>
     </div>
 </template>
 
@@ -13,19 +13,9 @@
         ],
         data(){
           return{
-              checkedStatus:""
           }
         },
         methods:{
-            finish(){
-                if(this.checkedStatus == "checkedText"){
-                    this.checkedStatus ="";
-                    this.$emit('func',this.content.message)
-                }else {
-                    this.checkedStatus = "checkedText";
-                    this.$emit('func',this.content.message)
-                }
-            }
         }
     }
 </script>

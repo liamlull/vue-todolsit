@@ -25,18 +25,11 @@
             return {
                 addMsg: "",
                 checkedStatus:"",
-                items: [
-                    {message: '123456', status: true},
-                    {message: 'ffffff', status: true}
-                ],realitems:[
-                    {message: '123456', status: true},
-                    {message: 'ffffff', status: true}
-                ]
             }
         },
         methods: {
             addNewItem() {
-                this.realitems.push({message: this.addMsg, status:true})
+                this.realitems.push({message: this.addMsg, status:false})
                 this.items=this.realitems;
             }, finishItem(message) {
                 this.realitems.map(x => {
@@ -46,11 +39,9 @@
                     return x;
                 })
             },getFinish(){
-                this.items = this.realitems;
-                this.items = this.items.filter(x=>!x.status);
+                this.items = this.realitems.filter(x=>x.status);
             },getActive(){
-                this.items = this.realitems;
-                this.items = this.items.filter(x=>x.status);
+                this.items = this.realitems.filter(x=>!x.status);
             },getAll(){
                 this.items = this.realitems;
             }
