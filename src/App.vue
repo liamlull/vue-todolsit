@@ -6,7 +6,6 @@
 
 <script>
 import List from "./components/todolist/list";
-
 export default {
   name: 'app',
   components: {
