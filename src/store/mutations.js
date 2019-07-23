@@ -3,7 +3,6 @@ const mutations = {
         state.todos.push(item);
     },
     flashItems(state){
-        console.log(state.relTodos)
         state.todos = state.relTodos;
     },
     getItems(state, itemsFromDB) {
