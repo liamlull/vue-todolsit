@@ -36,10 +36,6 @@
 </script>
 
 <style scoped>
-    #checkList{
-        width: 380px;
-        border: 2px solid #ffb329;
-    }
     .checkLi{
         background-color: #ffb329;
     }

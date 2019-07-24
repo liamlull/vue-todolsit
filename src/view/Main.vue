@@ -3,8 +3,7 @@
         <h1>
             请输入你的名字：
         </h1>
-        <input type="text"/>
-        <button v-on:click="goToList">开始</button>
+        <a-input-search v-model="username" @search="goToList" enterButton="开始" size="large" />
     </div>
 </template>
 
@@ -13,7 +12,11 @@
         name: "Main",
         methods:{
             goToList(){
-                this.$router.push('home');
+                this.$router.push({path:'home/',params:{username:this.username}});
+            }
+        },data(){
+            return {
+                username:"",
             }
         }
     }

@@ -1,7 +1,6 @@
 <template>
     <div>
-        <input id="inputItem" v-model="addMessage" value=""/>
-        <button v-on:click="addNewItem()" id="add-but">Add</button>
+        <a-input-search v-model="addMessage"  @search="addNewItem" enterButton="Add" size="large" />
     </div>
 </template>
 

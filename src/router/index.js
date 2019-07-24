@@ -1,9 +1,9 @@
 import vue from "vue";
 import router from "vue-router"
-import Main from '../components/todolist/Main'
+import Main from '../view/Main'
 import List from '../components/todolist/list'
-import Home from '../components/todolist/Home'
-import Message from '../components/todolist/message'
+import Home from '../view/Home'
+import Message from '../view/message'
 
 
 vue.use(router);

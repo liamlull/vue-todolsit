@@ -1,4 +1,4 @@
-<template xmlns:v-bing="http://www.w3.org/1999/xhtml">
+<template>
     <div id="checkli" @dblclick="isEdit=!isEdit">
         <div style="float: left;">
             <span v-bind:class="{checkedText:content.status}">{{index+1}}.</span>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+
     export default {
         name: "listItem",
         props: [
@@ -32,16 +33,16 @@
                     message: content.message,
                     status: !content.status
                 }
-                this.$store.dispatch("updateStatus", item);
+                this.$store.dispatch('updateStatus', item);
             }, deleteItem(id) {
-                this.$store.dispatch("deleteToDo", id)
+                this.$store.dispatch('deleteToDo', id)
             },lostBlur(id,content){
                 let item = {
                     id: id,
                     message: this.content.message,
                     status: content.status
                 }
-                this.$store.dispatch("updateStatus", item);
+                this.$store.dispatch('updateStatus', item);
             }
         }
     }
