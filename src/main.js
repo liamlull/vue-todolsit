@@ -5,6 +5,7 @@ import getters from './store/getter'
 import mutations from './store/mutations'
 import actions from './store/actions'
 import state from './store/state'
+import router from './router'
 
 
 Vue.use(Vuex)
@@ -16,5 +17,5 @@ const store = new Vuex.Store({
 
 new Vue({
     render: h => h(App),
-    store
+    store,router
 }).$mount('#app')

@@ -16,6 +16,7 @@
                     return
                 }
                 this.$store.dispatch('addNewItem',this.addMessage);
+                this.addMessage="";
             }
         },
         data(){
