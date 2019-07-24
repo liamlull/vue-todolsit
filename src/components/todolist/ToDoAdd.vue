@@ -1,6 +1,10 @@
 <template>
     <div>
         <a-input-search v-model="addMessage"  @search="addNewItem" enterButton="Add" size="large" />
+        任务完成度：<a-progress strokeLinecap="square" :percent="getCalculate*100" />
+        <br/>
+        <br/>
+        <br/>
     </div>
 </template>
 
@@ -21,6 +25,10 @@
         data(){
             return {
                 addMessage:"",
+            }
+        },computed:{
+            getCalculate(){
+                return this.$store.getters.getCalculate;
             }
         }
     }

@@ -20,7 +20,12 @@
                 </a-menu>
             </a-layout-sider>
             <a-layout>
-                <a-layout-header :style="{ background: '#fff', padding: 0 }" />
+                <a-layout-header :style="{ background: '#fff', padding: 0 }" >
+                    <div v-on:click="back" id="back-div">
+                        <a-icon type="arrow-left" style="font-size: larger"/>
+                        返回
+                    </div>
+                </a-layout-header>
                 <a-layout-content :style="{ margin: '24px 16px 0' }">
                     <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
                         <router-view></router-view>
@@ -71,5 +76,8 @@
 }
     #side-div{
         width: 300px;
+    }
+    #back-div:hover{
+        cursor: pointer;
     }
 </style>

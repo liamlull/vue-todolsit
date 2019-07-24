@@ -22,7 +22,7 @@
         width: 60px;
         height: 30px;
         border: none;
-        color:#ffb329;
+        color:#1890FE;
         font-family:"Algerian";
         background-color: white;
         margin-left: 20px;

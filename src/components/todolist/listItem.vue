@@ -2,13 +2,15 @@
     <div id="checkli" @dblclick="isEdit=!isEdit">
         <div style="float: left;">
             <span v-bind:class="{checkedText:content.status}">{{index+1}}.</span>
-            <input id="todoItem" type="checkbox" :checked="content.status" @input="changeStatus(content,id)"></input>
             <span v-show="!isEdit" v-bind:class="{checkedText:content.status}">{{content.message}} </span>
-            <span v-show="isEdit"  >
-                  <input type="text" v-model="content.message"  @blur="lostBlur(id,content)"  @keyup.enter="isEdit=!isEdit" value=""/>
+            <span id="input-span" v-show="isEdit"  >
+                  <a-input type="text" v-model="content.message"  @blur="lostBlur(id,content)"  @keyup.enter="isEdit=!isEdit" value=""/>
             </span>
         </div>
-        <span id="deleteSpan" v-on:click="deleteItem(id)">x</span>
+        <div style="float: right;margin-right: 20px">
+            <a-switch :checked="content.status" @change='changeStatus(content,id)' style="margin-right: 20px"/>
+            <a-button type="danger" v-on:click="deleteItem(id)" ghost>delete</a-button>
+        </div>
     </div>
 </template>
 
@@ -103,6 +105,11 @@
 
     #deleteSpan:hover {
         cursor: pointer
+    }
+
+    #input-span {position:relative;
+        left:25px;
+        bottom: 27px;
     }
 
 </style>
