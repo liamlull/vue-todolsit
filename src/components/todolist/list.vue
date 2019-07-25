@@ -37,7 +37,7 @@
 
 <style scoped>
     .checkLi{
-        background-color: #1890FE;
+        background-color: #f0f2f5;
     }
     ul{
         padding-left: 0px;

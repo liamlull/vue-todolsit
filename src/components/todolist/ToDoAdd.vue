@@ -1,7 +1,7 @@
 <template>
     <div>
         <a-input-search v-model="addMessage"  @search="addNewItem" enterButton="Add" size="large" />
-        任务完成度：<a-progress strokeLinecap="square" :percent="getCalculate*100" />
+        任务完成度：<a-progress strokeLinecap="square" :percent="parseFloat((getCalculate*100).toFixed(2))" />
         <br/>
         <br/>
         <br/>
